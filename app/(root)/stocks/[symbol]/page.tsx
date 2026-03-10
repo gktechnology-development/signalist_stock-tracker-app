@@ -14,7 +14,7 @@ export default async function StockDetails({ params }: StockDetailsPageProps) {
   const scriptUrl = `https://s3.tradingview.com/external-embedding/embed-widget-`;
 
   return (
-    <div className="flex min-h-screen p-4 md:p-6 lg:p-8">
+    <div className="flex min-h-screen p-4 md:p-6 lg:p-8" style={{ animation: 'fade-in-up 0.5s ease-out' }}>
       <section className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
         {/* Left column */}
         <div className="flex flex-col gap-6">
@@ -25,6 +25,7 @@ export default async function StockDetails({ params }: StockDetailsPageProps) {
           />
 
           <TradingViewWidget
+            title="Price Chart"
             scriptUrl={`${scriptUrl}advanced-chart.js`}
             config={CANDLE_CHART_WIDGET_CONFIG(symbol)}
             className="custom-chart"
@@ -32,6 +33,7 @@ export default async function StockDetails({ params }: StockDetailsPageProps) {
           />
 
           <TradingViewWidget
+            title="Baseline"
             scriptUrl={`${scriptUrl}advanced-chart.js`}
             config={BASELINE_WIDGET_CONFIG(symbol)}
             className="custom-chart"
@@ -46,18 +48,21 @@ export default async function StockDetails({ params }: StockDetailsPageProps) {
           </div>
 
           <TradingViewWidget
+            title="Technical Analysis"
             scriptUrl={`${scriptUrl}technical-analysis.js`}
             config={TECHNICAL_ANALYSIS_WIDGET_CONFIG(symbol)}
             height={400}
           />
 
           <TradingViewWidget
+            title="Company Profile"
             scriptUrl={`${scriptUrl}company-profile.js`}
             config={COMPANY_PROFILE_WIDGET_CONFIG(symbol)}
             height={440}
           />
 
           <TradingViewWidget
+            title="Financials"
             scriptUrl={`${scriptUrl}financials.js`}
             config={COMPANY_FINANCIALS_WIDGET_CONFIG(symbol)}
             height={464}

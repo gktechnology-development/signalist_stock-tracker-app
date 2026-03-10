@@ -17,7 +17,12 @@ const TradingViewWidget = ({ title, scriptUrl, config, height = 600, className }
 
     return (
         <div className="w-full">
-            {title && <h3 className="font-semibold text-2xl text-gray-100 mb-5">{title}</h3>}
+            {title && (
+                <h3 className="font-semibold text-2xl text-gray-100 mb-5 flex items-center gap-3">
+                    <span className="w-1 h-6 rounded-full bg-gradient-to-b from-teal-400 to-cyan-500 inline-block" />
+                    {title}
+                </h3>
+            )}
             <div className={cn('tradingview-widget-container', className)} ref={containerRef}>
                 <div className="tradingview-widget-container__widget" style={{ height, width: "100%" }} />
             </div>

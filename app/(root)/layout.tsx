@@ -15,10 +15,10 @@ const Layout = async ({ children }: { children : React.ReactNode }) => {
     }
 
     return (
-        <main className="min-h-screen text-gray-400">
+        <main className="min-h-screen text-gray-400 relative">
             <Header user={user} />
 
-            <div className="container py-10">
+            <div className="container py-8 md:py-10 relative z-10">
                 {children}
             </div>
         </main>

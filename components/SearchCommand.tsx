@@ -90,7 +90,7 @@ export default function SearchCommand({ renderAs = 'button', label = 'Add stock'
                         onClick={handleSelectStock}
                         className="search-item-link"
                     >
-                      <TrendingUp className="h-4 w-4 text-gray-500" />
+                      <TrendingUp className="h-4 w-4 text-teal-400/60" />
                       <div  className="flex-1">
                         <div className="search-item-name">
                           {stock.name}

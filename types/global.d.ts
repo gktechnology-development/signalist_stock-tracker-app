@@ -168,15 +168,6 @@ declare global {
         news?: MarketNewsArticle[];
     };
 
-    type SearchCommandProps = {
-        open?: boolean;
-        setOpen?: (open: boolean) => void;
-        renderAs?: 'button' | 'text';
-        buttonLabel?: string;
-        buttonVariant?: 'primary' | 'secondary';
-        className?: string;
-    };
-
     type AlertData = {
         symbol: string;
         company: string;
@@ -214,6 +205,12 @@ declare global {
         alertType: 'upper' | 'lower';
         threshold: number;
         changePercent?: number;
+    };
+
+    type UserForNewsEmail = {
+        id: string;
+        email: string;
+        name: string;
     };
 }
 

@@ -26,10 +26,10 @@ const UserDropdown = ({ user, initialStocks }: {user: User, initialStocks: Stock
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="flex items-center gap-3 text-gray-4 hover:text-yellow-500">
-                    <Avatar className="h-8 w-8">
+                <Button variant="ghost" className="flex items-center gap-3 text-gray-400 hover:text-teal-400 transition-all duration-300">
+                    <Avatar className="h-8 w-8 ring-2 ring-teal-400/20 transition-all duration-300 hover:ring-teal-400/50">
                         <AvatarImage src="https://avatars.githubusercontent.com/u/153423955?s=280&v=4" />
-                        <AvatarFallback className="bg-yellow-500 text-yellow-900 text-sm font-bold">
+                        <AvatarFallback className="bg-gradient-to-br from-teal-400 to-cyan-500 text-gray-900 text-sm font-bold">
                             {user.name[0]}
                         </AvatarFallback>
                     </Avatar>
@@ -40,12 +40,12 @@ const UserDropdown = ({ user, initialStocks }: {user: User, initialStocks: Stock
                     </div>
                 </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="text-gray-400">
+            <DropdownMenuContent className="text-gray-400 border-teal-400/10" style={{ background: 'rgba(10, 15, 30, 0.95)', backdropFilter: 'blur(20px)' }}>
                 <DropdownMenuLabel>
                     <div className="flex relative items-center gap-3 py-2">
-                        <Avatar className="h-10 w-10">
+                        <Avatar className="h-10 w-10 ring-2 ring-teal-400/30">
                             <AvatarImage src="https://avatars.githubusercontent.com/u/153423955?s=280&v=4" />
-                            <AvatarFallback className="bg-yellow-500 text-yellow-900 text-sm font-bold">
+                            <AvatarFallback className="bg-gradient-to-br from-teal-400 to-cyan-500 text-gray-900 text-sm font-bold">
                                 {user.name[0]}
                             </AvatarFallback>
                         </Avatar>
@@ -57,12 +57,12 @@ const UserDropdown = ({ user, initialStocks }: {user: User, initialStocks: Stock
                         </div>
                     </div>
                 </DropdownMenuLabel>
-                <DropdownMenuSeparator className="bg-gray-600"/>
-                <DropdownMenuItem onClick={handleSignOut} className="text-gray-100 text-md font-medium focus:bg-transparent focus:text-yellow-500 transition-colors cursor-pointer">
+                <DropdownMenuSeparator className="bg-gray-600/30"/>
+                <DropdownMenuItem onClick={handleSignOut} className="text-gray-100 text-md font-medium focus:bg-transparent focus:text-red-400 transition-colors cursor-pointer">
                     <LogOut className="h-4 w-4 mr-2 hidden sm:block" />
                     Logout
                 </DropdownMenuItem>
-                <DropdownMenuSeparator className="hidden sm:block bg-gray-600"/>
+                <DropdownMenuSeparator className="hidden sm:block bg-gray-600/30"/>
                 <nav className="sm:hidden">
                     <NavItems initialStocks={initialStocks} />
                 </nav>
